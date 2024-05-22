@@ -1,13 +1,15 @@
 package com.distribuida.entities;
 
-public class factura_detalle {
+public class Factura_detalle {
 	private int id_factura_detalle;
 	private int cantidad;
 	private double subtotal;
 	private int id_factura;
 	private int id_libro;
+	private Factura factura;
+	private Libro libro;
 	
-	public factura_detalle(int id_factura_detalle, int cantidad, float subtotal, int id_factura, int id_libro) {
+	public Factura_detalle(int id_factura_detalle, int cantidad, float subtotal, int id_factura, int id_libro) {
 		super();
 		this.id_factura_detalle = id_factura_detalle;
 		this.cantidad = cantidad;
@@ -104,6 +106,42 @@ public class factura_detalle {
 
 	public void setId_libro(int id_libro) {
 		this.id_libro = id_libro;
+	}
+
+
+
+
+
+
+	public Factura getFactura() {
+		return factura;
+	}
+
+
+
+
+
+
+	public void setFactura(Factura factura) {
+		this.factura = factura;
+	}
+
+
+
+
+
+
+	public Libro getLibro() {
+		return libro;
+	}
+
+
+
+
+
+
+	public void setLibro(Libro libro) {
+		this.libro = libro;
 	}
 
 

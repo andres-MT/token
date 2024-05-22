@@ -11,6 +11,7 @@ public class Cliente {
 		private String direccion;
 		private String telefomo;
 		private String correo;
+		private Factura factura;
 		
 		public Cliente(int idCliente, String cedula, String nobre, String apellido, Date fechaNacimiento,
 				String direccion, String telefomo, String correo) {
@@ -88,8 +89,18 @@ public class Cliente {
 		public void setCorreo(String correo) {
 			this.correo = correo;
 		}
+		
+		
 
 		
+		public Factura getFactura() {
+			return factura;
+		}
+
+		public void setFactura(Factura factura) {
+			this.factura = factura;
+		}
+
 		@Override
 		public String toString() {
 			return "Cliente [idCliente=" + idCliente + ", cedula=" + cedula + ", nobre=" + nobre + ", apellido="

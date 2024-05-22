@@ -11,6 +11,8 @@ public class Factura {
 	private double total;
 	//private int idCliente
 	private Cliente cliente;
+	private Factura_detalle factura_detalle;
+	
 	
 	
 	public Factura(int idFactura, String num_factura, Date fecha, float total_neto, float iva, float total) {
@@ -143,6 +145,22 @@ public class Factura {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+	
+	
+
+
+
+
+	public Factura_detalle getFactura_detalle() {
+		return factura_detalle;
+	}
+
+
+
+
+	public void setFactura_detalle(Factura_detalle factura_detalle) {
+		this.factura_detalle = factura_detalle;
 	}
 
 
