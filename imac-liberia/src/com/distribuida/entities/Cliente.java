@@ -1,7 +1,10 @@
 package com.distribuida.entities;
 
-import java. util.Date; 
+import java. util.Date;
 
+import org.springframework.stereotype.Component; 
+
+@Component
 public class Cliente {
 		private int idCliente;
 		private String cedula;

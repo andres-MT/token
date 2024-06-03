@@ -1,5 +1,8 @@
 package com.distribuida.entities;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Categoria {
 	private int id_categoria;
 	private String categoria;
