@@ -13,11 +13,11 @@ public class Factura {
 	private double iva;
 	private double total;
 	//private int idCliente
-	private Cliente cliente;
-	private Factura_detalle factura_detalle;
+	//private Cliente cliente;
+	//private Factura_detalle factura_detalle;
 	
 	
-	
+	public Factura () {}
 	public Factura(int idFactura, String num_factura, Date fecha, float total_neto, float iva, float total) {
 	
 		this.idFactura = idFactura;
@@ -139,32 +139,32 @@ public class Factura {
 
 
 
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-
-
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-	
-	
-
-
-
-
-	public Factura_detalle getFactura_detalle() {
-		return factura_detalle;
-	}
-
-
-
-
-	public void setFactura_detalle(Factura_detalle factura_detalle) {
-		this.factura_detalle = factura_detalle;
-	}
+//	public Cliente getCliente() {
+//		return cliente;
+//	}
+//
+//
+//
+//
+//	public void setCliente(Cliente cliente) {
+//		this.cliente = cliente;
+//	}
+//	
+//	
+//
+//
+//
+//
+//	public Factura_detalle getFactura_detalle() {
+//		return factura_detalle;
+//	}
+//
+//
+//
+//
+//	public void setFactura_detalle(Factura_detalle factura_detalle) {
+//		this.factura_detalle = factura_detalle;
+//	}
 
 
 
@@ -172,7 +172,7 @@ public class Factura {
 	@Override
 	public String toString() {
 		return "Factura [idFactura=" + idFactura + ", num_Factura=" + num_Factura + ", fecha=" + fecha + ", total_neto="
-				+ total_neto + ", iva=" + iva + ", total=" + total + ", cliente=" + cliente + "]";
+				+ total_neto + ", iva=" + iva + ", total=" + total + "]";
 	}
 	
 	

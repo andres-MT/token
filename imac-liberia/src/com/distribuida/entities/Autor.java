@@ -14,9 +14,12 @@ public class Autor {
 	private String correo ;
 	private Libro libro;
 	
+	
+	public Autor() {}
+	
 	public Autor(int id_autor, String nombre1, String nombre2, String apellido, String pais, String direccion,
 			String telefono, String correo, Libro libro) {
-		super();
+		
 		this.id_autor = id_autor;
 		this.nombre1 = nombre1;
 		this.nombre2 = nombre2;

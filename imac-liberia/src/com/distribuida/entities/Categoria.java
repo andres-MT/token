@@ -10,9 +10,9 @@ public class Categoria {
 	 private Libro libro;
 	 
 	
-	
+	 public Categoria() {}
 	public Categoria(int id_categoria, String categoria, String descripcion) {
-		super();
+		
 		this.id_categoria = id_categoria;
 		this.categoria = categoria;
 		this.descripcion = descripcion;

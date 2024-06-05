@@ -21,10 +21,11 @@ public class Libro {
 	private Categoria categoria;
 	private Autor autor;
 	
+	public Libro() {}
 	public Libro(int id_libro, String titulo, String editorial, int num_paginas, String edicion, String idioma,
 			String fecha_publicacion, String descripcion, String tipo_pasta, String iSBN, String num_ejemplo,
 			String portada, String presentacion, double precio, int id_categoria, int id_autor) {
-		super();
+		
 		this.id_libro = id_libro;
 		this.titulo = titulo;
 		this.editorial = editorial;

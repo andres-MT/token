@@ -2,28 +2,44 @@ package com.distribuida.entities;
 
 import java. util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component; 
 
 @Component
+@Entity
+@Table(name="cliente")
 public class Cliente {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id_cliente")
 		private int idCliente;
+	@Column(name="cedula")
 		private String cedula;
-		private String nobre;
+	@Column(name="nombre")
+		private String nombre;
+	@Column(name="apellido")
 		private String apellido;
-		private Date fechaNacimiento;
+	@Column(name="direccion")
 		private String direccion;
+	@Column(name="telefono")
 		private String telefomo;
+	@Column(name="correo")
 		private String correo;
-		private Factura factura;
-		
-		public Cliente(int idCliente, String cedula, String nobre, String apellido, Date fechaNacimiento,
+	
+	public  Cliente() {}
+		public Cliente(int idCliente, String cedula, String nobre, String apellido,
 				String direccion, String telefomo, String correo) {
-			super();
+			
 			this.idCliente = idCliente;
 			this.cedula = cedula;
-			this.nobre = nobre;
-			this.apellido = apellido;
-			this.fechaNacimiento = fechaNacimiento;
+			this.nombre = nobre;
+			this.apellido = apellido;			
 			this.direccion = direccion;
 			this.telefomo = telefomo;
 			this.correo = correo;
@@ -45,13 +61,7 @@ public class Cliente {
 			this.cedula = cedula;
 		}
 
-		public String getNobre() {
-			return nobre;
-		}
-
-		public void setNobre(String nobre) {
-			this.nobre = nobre;
-		}
+		
 
 		public String getApellido() {
 			return apellido;
@@ -61,13 +71,7 @@ public class Cliente {
 			this.apellido = apellido;
 		}
 
-		public Date getFechaNacimiento() {
-			return fechaNacimiento;
-		}
-
-		public void setFechaNacimiento(Date fechaNacimiento) {
-			this.fechaNacimiento = fechaNacimiento;
-		}
+		
 
 		public String getDireccion() {
 			return direccion;
@@ -96,19 +100,12 @@ public class Cliente {
 		
 
 		
-		public Factura getFactura() {
-			return factura;
-		}
 
-		public void setFactura(Factura factura) {
-			this.factura = factura;
-		}
 
 		@Override
 		public String toString() {
-			return "Cliente [idCliente=" + idCliente + ", cedula=" + cedula + ", nobre=" + nobre + ", apellido="
-					+ apellido + ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", telefomo="
-					+ telefomo + ", correo=" + correo + "]";
+			return "Cliente [idCliente=" + idCliente + ", cedula=" + cedula + ", nombre=" + nombre + ", apellido="
+					+ apellido + ", direccion=" + direccion + ", telefomo=" + telefomo + ", correo=" + correo + "]";
 		} 
 		
 		

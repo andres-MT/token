@@ -9,8 +9,10 @@ public class Factura_detalle {
 	private Factura factura;
 	private Libro libro;
 	
+	public Factura_detalle() {}
+	
 	public Factura_detalle(int id_factura_detalle, int cantidad, float subtotal, int id_factura, int id_libro) {
-		super();
+		
 		this.id_factura_detalle = id_factura_detalle;
 		this.cantidad = cantidad;
 		this.subtotal = subtotal;
