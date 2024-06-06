@@ -20,8 +20,8 @@ public class CategoriaDAOlmpl implements CategoriaDAO {
 	@Transactional
 	public List<Categoria> findALL() {
 		// TODO Auto-generated method stub
-		Session session=sessionFactory.getCurrentSession();
-		return session.createQuery("from Categoria",Categoria.class).getResultList();
+		Session Session=sessionFactory.getCurrentSession();
+		return Session.createQuery("from Categoria",Categoria.class).getResultList();
 	}
 
 	@Override
