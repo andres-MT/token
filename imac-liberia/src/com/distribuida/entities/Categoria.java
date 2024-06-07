@@ -1,7 +1,5 @@
 package com.distribuida.entities;
 
-import java. util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,33 +17,32 @@ public class Categoria {
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	@Column(name="id_categoria")
-	private int id_categoria;
+	private int idcategoria;
 	@Column(name="categoria")
 	private String categoria;
 	@Column(name="descripcion")
 	private String descripcion;
-	@Column(name="libro")
-	 private Libro libro;
+
 	 
 	
 	 public Categoria() {}
+	 
 	public Categoria(int id_categoria, String categoria, String descripcion) {
 		
-		this.id_categoria = id_categoria;
+		this.idcategoria = id_categoria;
 		this.categoria = categoria;
-		this.descripcion = descripcion;
 	}
 
 
 
 	public int getId_categoria() {
-		return id_categoria;
+		return idcategoria;
 	}
 
 
 
 	public void setId_categoria(int id_categoria) {
-		this.id_categoria = id_categoria;
+		this.idcategoria = id_categoria;
 	}
 
 
@@ -75,21 +72,11 @@ public class Categoria {
 	
 
 
-	public Libro getLibro() {
-		return libro;
-	}
-
-
-
-	public void setLibro(Libro libro) {
-		this.libro = libro;
-	}
-
 
 
 	@Override
 	public String toString() {
-		return "categoria [id_categoria=" + id_categoria + ", categoria=" + categoria + ", descripcion=" + descripcion
+		return "categoria [id_categoria=" + idcategoria + ", categoria=" + categoria + ", descripcion=" + descripcion
 				+ "]";
 	}
 	

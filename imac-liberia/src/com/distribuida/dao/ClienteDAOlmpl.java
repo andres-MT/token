@@ -2,6 +2,7 @@ package com.distribuida.dao;
 
 import java.util.List;
 
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
@@ -14,7 +15,7 @@ import com.distribuida.entities.Cliente;
 
 @Repository
 public class ClienteDAOlmpl implements ClienteDAO {
-	@Autowired
+@Autowired
 	private SessionFactory sessionFactory;
 
 	@Override
@@ -22,7 +23,7 @@ public class ClienteDAOlmpl implements ClienteDAO {
 	public List<Cliente> findALL() {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
-		return  session.createQuery("from Cliente",Cliente.class).getResultList();
+		return  session.createQuery("from cliente",Cliente.class).getResultList();
 	}
 
 	

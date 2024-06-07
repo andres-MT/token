@@ -12,9 +12,7 @@ public class Factura {
 	private double total_neto;
 	private double iva;
 	private double total;
-	//private int idCliente
-	//private Cliente cliente;
-	//private Factura_detalle factura_detalle;
+	
 	
 	
 	public Factura () {}

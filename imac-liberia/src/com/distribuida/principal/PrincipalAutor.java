@@ -1,7 +1,6 @@
 package com.distribuida.principal;
 
 import java.util.List;
-import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.distribuida.dao.AutorDAO;
