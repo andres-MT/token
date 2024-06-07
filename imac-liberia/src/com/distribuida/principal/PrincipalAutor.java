@@ -14,10 +14,14 @@ public class PrincipalAutor {
 		// Patron IK Inversión de Control
 		ClassPathXmlApplicationContext context =new ClassPathXmlApplicationContext("ApplicationContext.xml");
 		AutorDAO autorDAO =context.getBean("AutorDAOmpl",AutorDAO.class);
+		
 		List<Autor> autor=autorDAO.findALL();
+		
 		autor.forEach(item ->{
+			
 			System.out.println(item.toString());
 		});
+		
 		context.close();
 	}
 

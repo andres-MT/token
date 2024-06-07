@@ -14,12 +14,16 @@ public class PrincipalCliente {
 		
 		// Patrón 10C Inversión de Control
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
+		
 		ClienteDAO clienteDAO = context.getBean( "clienteDAOImpl" ,ClienteDAO.class);
+		
 		List<Cliente> clientes= clienteDAO.findALL();
 		
 		clientes.forEach(item -> {
+			
 			System. out. println(item.toString());
 		});
+		
 		context.close();
 	}
 
