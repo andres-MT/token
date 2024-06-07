@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_cliente")
+	@Column(name="id_Cliente")
 		private int idCliente;
 	@Column(name="cedula")
 		private String cedula;

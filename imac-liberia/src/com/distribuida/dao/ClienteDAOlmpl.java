@@ -23,7 +23,7 @@ public class ClienteDAOlmpl implements ClienteDAO {
 	public List<Cliente> findALL() {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
-		return  session.createQuery("from cliente",Cliente.class).getResultList();
+		return  session.createQuery("from Cliente",Cliente.class).getResultList();
 	}
 
 	

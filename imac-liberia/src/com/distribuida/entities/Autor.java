@@ -15,12 +15,10 @@ import org.springframework.stereotype.Component;
 public class Autor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_cliente")
+	@Column(name="id_autor")
 	private int idautor;
-	@Column(name="nobre1")
-	private String nombre1;
-	@Column(name="nombre2")
-	private String nombre2;
+	@Column(name="nombre")
+	private String nombre;
 	@Column(name="apellido")
 	private String apellido;
 	@Column(name="pais")
@@ -31,24 +29,22 @@ public class Autor {
 	private String telefono;
 	@Column(name="correo")
 	private String correo;
-	@Column(name="libro")
-	private Libro libro;
+	
 	
 	
 	public Autor() {}
 	
-	public Autor(int id_autor, String nombre1, String nombre2, String apellido, String pais, String direccion,
+	public Autor(int id_autor, String nombre, String apellido, String pais, String direccion,
 			String telefono, String correo, Libro libro) {
 		
 		this.idautor = id_autor;
-		this.nombre1 = nombre1;
-		this.nombre2 = nombre2;
+		this.nombre = nombre;
 		this.apellido = apellido;
 		this.pais = pais;
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.correo = correo;
-		this.libro = libro;
+		
 	}
 	
 	
@@ -58,18 +54,13 @@ public class Autor {
 	public void setId_autor(int id_autor) {
 		this.idautor = id_autor;
 	}
-	public String getNombre1() {
-		return nombre1;
+	public String getNombre() {
+		return nombre;
 	}
 	public void setNombre1(String nombre1) {
-		this.nombre1 = nombre1;
+		this.nombre = nombre;
 	}
-	public String getNombre2() {
-		return nombre2;
-	}
-	public void setNombre2(String nombre2) {
-		this.nombre2 = nombre2;
-	}
+	
 	public String getApellido() {
 		return apellido;
 	}
@@ -100,18 +91,13 @@ public class Autor {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	public Libro getLibro() {
-		return libro;
-	}
-	public void setLibro(Libro libro) {
-		this.libro = libro;
-	}
+	
 	
 	@Override
 	public String toString() {
-		return "Autor [id_autor=" + idautor + ", nombre1=" + nombre1 + ", nombre2=" + nombre2 + ", apellido="
+		return "Autor [id_autor=" + idautor + ", nombre1=" + nombre + ", nombre2=" +  ", apellido="
 				+ apellido + ", pais=" + pais + ", direccion=" + direccion + ", telefono=" + telefono + ", correo="
-				+ correo + ", libro=" + libro + "]";
+				+ correo + ", libro="  + "]";
 	}
 	
 }

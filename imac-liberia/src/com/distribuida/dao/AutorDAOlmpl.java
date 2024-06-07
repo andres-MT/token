@@ -12,13 +12,14 @@ import org.springframework.stereotype.Repository;
 
 import com.distribuida.entities.Autor;
 @Repository
-@Transactional
+
 public class AutorDAOlmpl  implements AutorDAO{
 	@Autowired
 	private SessionFactory sessionFactory;
 
 	
 	@Override
+	@Transactional
 	public List<Autor> findALL() {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
