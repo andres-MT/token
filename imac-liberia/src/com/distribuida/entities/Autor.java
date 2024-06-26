@@ -16,7 +16,7 @@ public class Autor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_autor")
-	private int idautor;
+	private int idAutor;
 	@Column(name="nombre")
 	private String nombre;
 	@Column(name="apellido")
@@ -37,7 +37,7 @@ public class Autor {
 	public Autor(int id_autor, String nombre, String apellido, String pais, String direccion,
 			String telefono, String correo, Libro libro) {
 		
-		this.idautor = id_autor;
+		this.idAutor = id_autor;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.pais = pais;
@@ -46,20 +46,23 @@ public class Autor {
 		this.correo = correo;
 		
 	}
+		
 	
-	
-	public int getId_autor() {
-		return idautor;
+	public int getIdAutor() {
+		return idAutor;
 	}
-	public void setId_autor(int id_autor) {
-		this.idautor = id_autor;
+
+	public void setIdAutor(int idAutor) {
+		this.idAutor = idAutor;
 	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre1(String nombre1) {
+
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+	public String getNombre() {
+		return nombre;
+	}	
 	
 	public String getApellido() {
 		return apellido;
@@ -95,9 +98,8 @@ public class Autor {
 	
 	@Override
 	public String toString() {
-		return "Autor [id_autor=" + idautor + ", nombre1=" + nombre + ", nombre2=" +  ", apellido="
-				+ apellido + ", pais=" + pais + ", direccion=" + direccion + ", telefono=" + telefono + ", correo="
-				+ correo + ", libro="  + "]";
+		return "Autor [idAutor=" + idAutor + ", nombre=" + nombre + ", apellido=" + apellido + ", pais=" + pais
+				+ ", direccion=" + direccion + ", telefono=" + telefono + ", correo=" + correo + "]";
 	}
 	
 }

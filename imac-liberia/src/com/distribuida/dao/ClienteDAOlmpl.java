@@ -25,33 +25,43 @@ public class ClienteDAOlmpl implements ClienteDAO {
 		Session session=sessionFactory.getCurrentSession();
 		return  session.createQuery("from Cliente",Cliente.class).getResultList();
 	}
+	@Transactional
+	@Override
+	public Cliente findOne(int id) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();
+		return session.get(Cliente.class, id) ;
+		
+	}
 
 	
 
 	@Override
 	public void add(Cliente cliente) {
 		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(cliente);
 
 	}
 
 	@Override
 	public void up(Cliente cliente) {
 		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(cliente);
 
 	}
 
 	@Override
 	public void del(int id) {
 		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		session.delete(findOne(id));
 
 	}
 
 
 
-	@Override
-	public Cliente findOne(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }
