@@ -32,7 +32,7 @@ public class AutorDAOlmpl implements AutorDAO {
 	@Override
 	@Transactional
 	public Autor findOne(int id) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stuba
 		
 		Session session = sessionFactory.getCurrentSession();
 
