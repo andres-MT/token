@@ -15,19 +15,19 @@ import com.distribuida.dao.ClienteDAO;
 import com.distribuida.entities.Cliente;
 
 @Controller
-@RequestMapping("/clientes") //Path principal
+@RequestMapping("/categoria") //Path principal
 public class CategoriaController {
 	
-	private ClienteDAO clienteDAO;
+	private ClienteDAO categoriaDAO;
 	
 	@GetMapping("/findAll") //Path secundario
 	public String findAll(Model model) {
 		
 		//try {
 			
-			List<Cliente> clientes = clienteDAO.findALL();
-			model.addAllAttributes(clientes);
-			return "listar-clientes"; //esto es el nombre del formulario EJ."listar -clientes.html" o"listar -clientes.jsp"
+			List<Cliente> categoria = clienteDAO.findALL();
+			model.addAllAttributes(categoria);
+			return "listar-categoria"; //esto es el nombre del formulario EJ."listar -categoria.html" o"listar -categoria.jsp"
 			
 	//	}catch(Exception e) {
 	//		e.printStackTrace();
@@ -45,8 +45,8 @@ public class CategoriaController {
 				Cliente cliente =clienteDAO.findOne(idCliente);
 				model.addAttribute("cliente", cliente);
 			}
-			if(opcion ==1)return"add-clientes";
-			else return "del-clientes" ;
+			if(opcion ==1)return"add-categoria";
+			else return "del-categoria" ;
 			
 			
 		//} catch (Exception e) {
@@ -77,7 +77,7 @@ public class CategoriaController {
 			clienteDAO.add(cliente2);
 			
 		}
-			return "redirect:/clientes/findAll";
+			return "redirect:/categoria/findAll";
 			
 			
 		//} catch (Exception e) {
@@ -94,7 +94,7 @@ public class CategoriaController {
 		//try {
 			clienteDAO.del(idCliente);
 			
-			return "redirect:/clientes/findAll";
+			return "redirect:/categoria/findAll";
 		//} catch (Exception e) {
 			// TODO: handle exception
 		}
