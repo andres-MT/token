@@ -47,8 +47,6 @@ public class ClienteController {
 			}
 			if(opcion ==1)return"add-clientes";
 			else return "del-clientes" ;
-			
-			
 		//} catch (Exception e) {
 			// TODO: handle exception
 		//}
@@ -66,9 +64,6 @@ public class ClienteController {
 			         ,Model model
 			         ) {
 		//try {
-			
-			
-			
 			if(idCliente ==null) {
 			 Cliente cliente = new Cliente(0,cedula,nombre,apellido,direccion,telefono,correo);
 			clienteDAO.add(cliente);

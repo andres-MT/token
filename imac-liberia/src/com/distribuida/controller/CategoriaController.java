@@ -11,21 +11,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.annotation.RequestScope;
 
-import com.distribuida.dao.ClienteDAO;
-import com.distribuida.entities.Cliente;
+import com.distribuida.dao.CategoriaDAO;
+import com.distribuida.entities.Categoria;
 
 @Controller
 @RequestMapping("/categoria") //Path principal
 public class CategoriaController {
 	
-	private ClienteDAO categoriaDAO;
+	private CategoriaDAO categoriaDAO;
 	
 	@GetMapping("/findAll") //Path secundario
 	public String findAll(Model model) {
 		
 		//try {
 			
-			List<Cliente> categoria = clienteDAO.findALL();
+			List<Categoria> categoria = categoriaDAO.findALL();
 			model.addAllAttributes(categoria);
 			return "listar-categoria"; //esto es el nombre del formulario EJ."listar -categoria.html" o"listar -categoria.jsp"
 			
@@ -35,20 +35,18 @@ public class CategoriaController {
 		
 	}
 	@GetMapping("/findOne")
-	public String findOne(@RequestParam("idCliente")@Nullable Integer idCliente 
+	public String findOne(@RequestParam("idCategoria")@Nullable Integer idCategoria 
 			             ,@RequestParam("opcion")@Nullable Integer opcion
 			             ,Model model
 			
 			) {
 		//try {
-			if(idCliente !=null) {
-				Cliente cliente =clienteDAO.findOne(idCliente);
-				model.addAttribute("cliente", cliente);
+			if(idCategoria !=null) {
+				Categoria categoria =categoriaDAO.findOne(idCategoria);
+				model.addAttribute("categoria", categoria);
 			}
 			if(opcion ==1)return"add-categoria";
 			else return "del-categoria" ;
-			
-			
 		//} catch (Exception e) {
 			// TODO: handle exception
 		//}
@@ -56,7 +54,7 @@ public class CategoriaController {
 	}
 	
 	@PostMapping("/add")
-	public String add(@RequestParam("idCliente") @Nullable Integer idCliente
+	public String add(@RequestParam("idCategoria") @Nullable Integer idCategoria
 			         ,@RequestParam("cedula") @Nullable String cedula
 			         ,@RequestParam("nombre") @Nullable String nombre
 			         ,@RequestParam("apellido") @Nullable String apellido
@@ -69,12 +67,12 @@ public class CategoriaController {
 			
 			
 			
-			if(idCliente ==null) {
-			 Cliente cliente = new Cliente(0,cedula,nombre,apellido,direccion,telefono,correo);
-			clienteDAO.add(cliente);
+			if(idCategoria ==null) {
+			 Categoria categoria = new Categoria(0,cedula,nombre,apellido,direccion,telefono,correo);
+			categoriaDAO.add(categoria);
 		} else {
-			Cliente cliente2 = new Cliente(idCliente,cedula,nombre,apellido,direccion,telefono,correo);
-			clienteDAO.add(cliente2);
+			Categoria categoria1 = new Categoria(idCategoria,cedula,nombre,apellido,direccion,telefono,correo);
+			categoriaDAO.add(categoria1);
 			
 		}
 			return "redirect:/categoria/findAll";
@@ -92,7 +90,7 @@ public class CategoriaController {
 	public String del (@RequestParam("idCliente")@Nullable Integer idCliente) {
 		
 		//try {
-			clienteDAO.del(idCliente);
+			categoriaDAO.del(idCliente);
 			
 			return "redirect:/categoria/findAll";
 		//} catch (Exception e) {

@@ -1,23 +1,50 @@
 package com.distribuida.entities;
 
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
+@Table(name="Factura_detalle")
 public class Factura_detalle {
-	private int id_factura_detalle;
+	
+	@Id
+	@GeneratedValue(strategy  = GenerationType.IDENTITY)
+	@Column(name ="id_factura_detalle")
+	private int idfacturadetalle;
+	@Column(name ="cantidad")
 	private int cantidad;
+	@Column(name ="subtotal")
 	private double subtotal;
-	private int id_factura;
-	private int id_libro;
+	
+	
+	@JoinColumn(name ="id_factura")
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	private Factura factura;
-	private Libro libro;
+	
+	@JoinColumn(name ="id_libro")
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	private Factura libro;
 	
 	public Factura_detalle() {}
 	
 	public Factura_detalle(int id_factura_detalle, int cantidad, float subtotal, int id_factura, int id_libro) {
 		
-		this.id_factura_detalle = id_factura_detalle;
+		this.idfacturadetalle = id_factura_detalle;
 		this.cantidad = cantidad;
 		this.subtotal = subtotal;
-		this.id_factura = id_factura;
-		this.id_libro = id_libro;
+		
 	}
 	
 	
@@ -26,7 +53,7 @@ public class Factura_detalle {
 
 
 	public int getId_factura_detalle() {
-		return id_factura_detalle;
+		return idfacturadetalle;
 	}
 
 
@@ -35,7 +62,7 @@ public class Factura_detalle {
 
 
 	public void setId_factura_detalle(int id_factura_detalle) {
-		this.id_factura_detalle = id_factura_detalle;
+		this.idfacturadetalle = id_factura_detalle;
 	}
 
 
@@ -79,36 +106,6 @@ public class Factura_detalle {
 
 
 
-	public int getId_factura() {
-		return id_factura;
-	}
-
-
-
-
-
-
-	public void setId_factura(int id_factura) {
-		this.id_factura = id_factura;
-	}
-
-
-
-
-
-
-	public int getId_libro() {
-		return id_libro;
-	}
-
-
-
-
-
-
-	public void setId_libro(int id_libro) {
-		this.id_libro = id_libro;
-	}
 
 
 
@@ -133,19 +130,6 @@ public class Factura_detalle {
 
 
 
-	public Libro getLibro() {
-		return libro;
-	}
-
-
-
-
-
-
-	public void setLibro(Libro libro) {
-		this.libro = libro;
-	}
-
 
 
 
@@ -153,8 +137,8 @@ public class Factura_detalle {
 
 	@Override
 	public String toString() {
-		return "factura_detalle [id_factura_detalle=" + id_factura_detalle + ", cantidad=" + cantidad + ", subtotal="
-				+ subtotal + ", id_factura=" + id_factura + ", id_libro=" + id_libro + "]";
+		return "factura_detalle [id_factura_detalle=" + idfacturadetalle + ", cantidad=" + cantidad + ", subtotal="
+				+ subtotal  + "]";
 	}
 	
 	
