@@ -55,12 +55,8 @@ public class CategoriaController {
 	
 	@PostMapping("/add")
 	public String add(@RequestParam("idCategoria") @Nullable Integer idCategoria
-			         ,@RequestParam("cedula") @Nullable String cedula
-			         ,@RequestParam("nombre") @Nullable String nombre
-			         ,@RequestParam("apellido") @Nullable String apellido
-			         ,@RequestParam("direccion") @Nullable String direccion
-			         ,@RequestParam("telefono") @Nullable String telefono
-			         ,@RequestParam("correo") @Nullable String correo
+			         ,@RequestParam("categoria") @Nullable String categoria
+			         ,@RequestParam("descripcion") @Nullable String descripcion
 			         ,Model model
 			         ) {
 		//try {
@@ -68,11 +64,11 @@ public class CategoriaController {
 			
 			
 			if(idCategoria ==null) {
-			 Categoria categoria = new Categoria(0,cedula,nombre,apellido,direccion,telefono,correo);
-			categoriaDAO.add(categoria);
-		} else {
-			Categoria categoria1 = new Categoria(idCategoria,cedula,nombre,apellido,direccion,telefono,correo);
+			 Categoria categoria1 = new Categoria(0,categoria,descripcion);
 			categoriaDAO.add(categoria1);
+		} else {
+			Categoria categoria2 = new Categoria(idCategoria,categoria,descripcion);
+			categoriaDAO.add(categoria2);
 			
 		}
 			return "redirect:/categoria/findAll";
