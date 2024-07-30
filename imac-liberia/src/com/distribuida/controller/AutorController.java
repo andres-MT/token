@@ -20,7 +20,7 @@ public class AutorController {
 	
 	private AutorDAO AutorDAO;
 	
-	@GetMapping("/findAll") //Path secundario
+	@GetMapping("/findAll") //Path secundario2
 	public String findAll(Model model) {
 		
 		//try {
@@ -54,14 +54,16 @@ public class AutorController {
 	}
 	
 	@PostMapping("/add")
-	public String add(@RequestParam("idAutor") @Nullable Integer idAutor
-			         ,@RequestParam("idAutor") @Nullable Integer nombre
-			         ,@RequestParam("idAutor") @Nullable Integer apellido
-			         ,@RequestParam("idAutor") @Nullable Integer pais
-			         ,@RequestParam("idAutor") @Nullable Integer direccion
-			         ,@RequestParam("idAutor") @Nullable Integer telefono
-			         ,@RequestParam("idAutor") @Nullable Integer correo
+	public String add(@RequestParam("idAutor") @Nullable Integer idAutor                
+			         ,@RequestParam("idAutor") @Nullable String nombre
+			         ,@RequestParam("idAutor") @Nullable String apellido
+			         ,@RequestParam("idAutor") @Nullable String pais
+			         ,@RequestParam("idAutor") @Nullable String direccion
+			         ,@RequestParam("idAutor") @Nullable String telefono
+			         ,@RequestParam("idAutor") @Nullable String correo
 			         ,Model model
+			         //,Model model
+			         //chigas 
 			         ) {
 		//try {
 			if(idAutor ==null) {

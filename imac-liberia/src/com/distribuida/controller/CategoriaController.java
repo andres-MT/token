@@ -67,8 +67,8 @@ public class CategoriaController {
 			 Categoria categoria1 = new Categoria(0,categoria,descripcion);
 			categoriaDAO.add(categoria1);
 		} else {
-			Categoria categoria2 = new Categoria(idCategoria,categoria,descripcion);
-			categoriaDAO.add(categoria2);
+			Categoria categoria1= new Categoria(idCategoria,categoria,descripcion);
+			categoriaDAO.add(categoria1);
 			
 		}
 			return "redirect:/categoria/findAll";
