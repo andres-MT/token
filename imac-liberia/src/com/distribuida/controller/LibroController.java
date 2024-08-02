@@ -32,13 +32,15 @@ public class LibroController {
 	
 	
 	@GetMapping("/findAll")
-	private String findALL(ModelMap modelMap) {
+	private String findALL(ModelMap modelMap) 
+	{
 		List<Libro> libros= libroDAO.findALL();
 		modelMap.addAttribute("libros",libros);
-		return"listar-libros";
+		
+		return"libros-listar";
 	}
 	@GetMapping("/finOne")
-	private String findOne(@RequestParam("idLibro") @Nullable Integer idLibro
+	public String findOne(@RequestParam("idLibro") @Nullable Integer idLibro
 			              ,@RequestParam("opcion") @Nullable Integer opcion
 			              ,ModelMap modelMap
 			
@@ -48,12 +50,13 @@ public class LibroController {
 			modelMap.addAttribute("libro", libro);
 		}
 		
+		
 		modelMap.addAttribute("autores", autorDAO.findALL());
 		modelMap.addAttribute("categorias", categoriaDAO.findALL());
 		
 		
-		if(opcion ==1) return "add -lirbos";
-		else return "del - libros";
+		if(opcion == 1 )return "libros-add";
+		else return "libros -del";
 		
 	}
 	

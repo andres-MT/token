@@ -2,6 +2,7 @@ package com.distribuida.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +18,7 @@ import com.distribuida.entities.Cliente;
 @Controller
 @RequestMapping("/clientes") //Path principal
 public class ClienteController {
-	
+	@Autowired
 	private ClienteDAO clienteDAO;
 	
 	@GetMapping("/findAll") //Path secundario
@@ -26,8 +27,8 @@ public class ClienteController {
 		//try {
 			
 			List<Cliente> clientes = clienteDAO.findALL();
-			model.addAllAttributes(clientes);
-			return "listar-clientes"; //esto es el nombre del formulario EJ."listar -clientes.html" o"listar -clientes.jsp"
+			model.addAttribute("clientes",clientes);
+			return "clientes-listar"; //esto es el nombre del formulario EJ."listar -clientes.html" o"listar -clientes.jsp"
 			
 	//	}catch(Exception e) {
 	//		e.printStackTrace();
@@ -38,8 +39,8 @@ public class ClienteController {
 	public String findOne(@RequestParam("idCliente")@Nullable Integer idCliente 
 			             ,@RequestParam("opcion")@Nullable Integer opcion
 			             ,Model model
-			
-			) {
+			           ){
+		        
 		//try {
 			if(idCliente !=null) {
 				Cliente cliente =clienteDAO.findOne(idCliente);
@@ -93,7 +94,7 @@ public class ClienteController {
 		//} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 	}
 	
  
