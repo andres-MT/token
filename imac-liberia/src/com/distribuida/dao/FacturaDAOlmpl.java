@@ -2,7 +2,7 @@ package com.distribuida.dao;
 
 import java.util.List;
 
-
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
@@ -60,7 +60,9 @@ public class FacturaDAOlmpl implements FacturaDAO {
 	public void del(int id) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		session.delete(findOne(id));
+		Query query=session.createQuery("keyIdFactura",id);
+		query.setParameter("keyidfactura", id);
+		query.executeUpdate();
 
 	}
 

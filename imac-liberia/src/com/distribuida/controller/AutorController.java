@@ -67,10 +67,10 @@ public class AutorController {
 			         ) {
 		//try {
 			if(idAutor ==null) {
-			 Autor Autor = new Autor(0,nombre,apellido,pais,direccion,telefono,correo);
+			 Autor Autor = new Autor(0,nombre,apellido,pais,direccion,telefono,correo, null);
 			AutorDAO.add(Autor);
 		} else {
-			Autor Autor2 = new Autor(idAutor,nombre,apellido,pais,direccion,telefono,correo);
+			Autor Autor2 = new Autor(idAutor,nombre,apellido,pais,direccion,telefono,correo, null);
 			AutorDAO.add(Autor2);
 			
 		}

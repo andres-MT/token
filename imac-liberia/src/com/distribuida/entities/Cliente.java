@@ -58,6 +58,14 @@ public class Cliente {
 		public void setCedula(String cedula) {
 			this.cedula = cedula;
 		}
+		
+		public String getnombre() {
+			return  nombre;
+		}
+
+		public void setnombre(String nombre) {
+			this. nombre =  nombre;
+		}
 
 		
 

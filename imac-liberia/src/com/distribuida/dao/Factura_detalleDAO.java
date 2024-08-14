@@ -9,6 +9,6 @@ public interface Factura_detalleDAO {
     void add(Factura_detalle factura_detalle);
     void update(Factura_detalle factura_detalle);
     void delete(Factura_detalle factura_detalle);
-	void delete(int id);
+	void del(int id);
 }
 
